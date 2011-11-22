@@ -32,7 +32,6 @@ from paste.fileapp import DirectoryApp, FileApp
 
 from muntjac.terminal.gwt.server.application_servlet import ApplicationServlet
 from muntjac.demo.main import urlmap
-from muntjac.test.suite import main as test
 
 
 def muntjac(applicationClass, host='localhost', port=8880, nogui=False,
@@ -98,6 +97,7 @@ def main(args=sys.argv[1:]):
             format='%(levelname)s: %(message)s')
 
     if opts.test:
+        from muntjac.test.suite import main as test
         test()
     else:
         nargs = len(args)
